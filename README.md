@@ -13,6 +13,6 @@
   }
 
 ### GET users endpoint - celeb-death-status.herokuapp.com/api/protected/users
-### GET user by id endpoint - celeb-death-status.herkuap.com/api/users/:id
+### GET user by id endpoint - celeb-death-status.herkuap.com/api/protected/users/:id
 These endpoints will allow you to bring back a list of users (or a particular user), but only if there is a valid token from logging in. When not logged in, it will return an error.
 
