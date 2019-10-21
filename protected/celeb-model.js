@@ -10,21 +10,22 @@ module.exports = {
     remove
 };
 
-
-
-
-
 function find() {
     return db('celebs')
       .select('id', 'name', 'info', 'dead');
 };
+
+function findById(id) {
+    return db('celebs')
+      .where(id)
+}
 
 function findBy(filter) {
     return db('celebs')
       .where(filter);
 };
 
-function add(celeb) {
+async function add(celeb) {
     const [id] = await db('celebs').insert(celeb, 'id');
     return db('celebs').where({id}).first();
 };

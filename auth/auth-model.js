@@ -16,7 +16,8 @@ function find() {
 
 function findById(id) {
     return db('users')
-      .where(id);
+      .where({id})
+      .first();
 };
 
 function findBy(filter) {

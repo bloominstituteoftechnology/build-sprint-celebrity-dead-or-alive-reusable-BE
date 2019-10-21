@@ -2,7 +2,9 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const generateToken = require('../config/generate-token.js');
 const Users = require('./auth-model.js');
+const Celebs = require('../protected/celeb-model')
 
+//register & login
 router.post('/register', (req, res) => {
     const user = req.body;
     const hash = bcrypt.hashSync(user.password, 14);
@@ -36,6 +38,34 @@ router.post('/login', (req, res) => {
       })
       .catch(err => {
           res.status(500).json({ message: 'unable to log user into system'});
+      });
+});
+
+//GET celeb info
+
+router.get('/celebs', (req, res) => {
+    Celebs.find()
+      .then(celebs => {
+          res.json(celebs);
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'Could not retrieve celebs from database'});
+      });
+});
+
+router.get('/celebs/:id', (req, res) => {
+    const { id } = req.params;
+
+    Celebs.findById(id)
+      .then(celeb => {
+          if(celeb) {
+              res.json(celeb);
+          } else {
+              res.status(404).json({ message: 'could not find celeb with given id'});
+          }
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'failed to get celebs from database'});
       });
 });
 
