@@ -17,7 +17,8 @@ function find() {
 
 function findById(id) {
     return db('celebs')
-      .where(id)
+      .where({id})
+      .first();
 }
 
 function findBy(filter) {
@@ -30,10 +31,10 @@ async function add(celeb) {
     return db('celebs').where({id}).first();
 };
 
-function update(id, celeb) {
+function update(changes, id) {
     return db('celebs')
-      .where('id', Number(id))
-      .update(celeb);
+      .where({ id })
+      .update(changes);
 };
 
 function remove(id) {

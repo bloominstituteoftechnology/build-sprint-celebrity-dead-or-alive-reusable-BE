@@ -79,6 +79,45 @@ router.post('/celebs', (req, res) => {
       });
 });
 
+router.put('/celebs/:id', (req, res) => {
+    const changes = req.body;
+    const { id } = req.params;
+
+    Celebs.findById(id)
+      .then(celeb => {
+          if (celeb) {
+              Celebs.update(changes, id)
+                .then(updatedCeleb => {
+                    res.json(updatedCeleb);
+                })
+          } else {
+              res.status(404).json({ error: 'could not find a celebrity with that id'});
+          }
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'failed to update celebrity'});
+      });
+
+});
+
+router.delete('/celebs/:id', (req, res) => {
+    const { id } = req.params;
+
+    Celebs.remove(id)
+      .then(deleted => {
+          if (deleted) {
+              res.json({ removed: deleted });
+          } else {
+              res.status(404).json({ error: 'could not find celebrity with that id'});
+          }
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'could not delete that celebrity'});
+      });
+});
+
+
+
 
 
 module.exports = router;

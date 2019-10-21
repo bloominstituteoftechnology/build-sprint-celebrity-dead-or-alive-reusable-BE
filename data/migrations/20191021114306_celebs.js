@@ -18,7 +18,8 @@ exports.up = function(knex) {
 
       celebs
         .boolean('dead')
-        .defaultTo(false);
+        .notNullable()
+        .defaultTo(false)
   })
 };
 
