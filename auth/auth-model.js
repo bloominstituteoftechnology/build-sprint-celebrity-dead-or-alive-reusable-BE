@@ -38,7 +38,7 @@ function addPoints(changes, id) {
 
 function remove(id) {
     return db('users')
-      .where('id', Number(id))
+      .where({id})
       .del();
 
 }

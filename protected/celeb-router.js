@@ -49,6 +49,22 @@ router.put('/users/:id', (req, res) => {
     };
 });
 
+//delete a user
+router.delete('/users/:id', (req, res) => {
+    const {id } = req.params;
+    Users.remove(id)
+      .then(deleted => {
+          if (deleted) {
+              res.json({ removed: deleted});
+          } else {
+              res.status(404).json({ error: 'could not find user with that id'});
+          }
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'failed to delete user'})
+      })
+})
+
 //add/update/delete celebrities
 
 router.post('/celebs', (req, res) => {
