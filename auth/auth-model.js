@@ -5,7 +5,7 @@ module.exports = {
     find,
     findById,
     findBy,
-    update,
+    addPoints,
     remove
 };
 
@@ -30,10 +30,10 @@ async function add(user) {
     return db('users').where({id}).first();
 };
 
-function update(id, user) {
+function addPoints(changes, id) {
     return db('users')
-      .where('id', Number(id))
-      .update(user);
+      .where({ id })
+      .update(changes);
 };
 
 function remove(id) {
