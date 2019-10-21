@@ -4,6 +4,7 @@ const helmet = require('helmet');
 
 const auth = require('../auth/auth-middleware.js');
 const authRouter = require('../auth/auth-router.js');
+const celebRouter = require('../protected/celeb-router.js');
 
 const server = express();
 
