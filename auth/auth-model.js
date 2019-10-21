@@ -11,7 +11,7 @@ module.exports = {
 
 function find() {
     return db('users')
-      .select('id', 'username', 'score');
+      .select('id', 'username', 'password', 'score');
 };
 
 function findById(id) {
