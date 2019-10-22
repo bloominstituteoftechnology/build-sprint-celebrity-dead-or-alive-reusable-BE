@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('celebs').insert([
-        {name: 'Terry Pratchett', info: 'British Author', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/173/433425.jpg', dead: 'true'},
+        {name: 'Terry Pratchett', info: 'English Author', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/173/433425.jpg', dead: 'true'},
         {name: 'Robin Williams', info: 'American Actor/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/3/8146.jpg', dead: 'true'},
         {name: 'Meryl Streep', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/4/11052.jpg', dead: 'false'},
         {name: 'Harrison Ford', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/44/112046.jpg', dead: 'false'},
@@ -44,11 +44,51 @@ exports.seed = function(knex) {
         {name: 'Chyna', info: 'American Wrestler', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/37/93256.jpg', dead: 'true'},
         {name: 'Peaches Geldof', info: 'English Columnist/TV Personality', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/88/221325.jpg', dead: 'true'},
         {name: 'Cory Monteith', info: 'Candaian Actor/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/3/8315.jpg', dead: 'true'},
-        {name: 'Prince', info: 'American Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/45/114336.jpg', dead: 'true'}
+        {name: 'Prince', info: 'American Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/45/114336.jpg', dead: 'true'},
+        {name: 'Wendie Malick', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/152/380163.jpg', dead: 'false'},
+        {name: 'Monica Potter', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/3/7979.jpg', dead: 'false'},
+        {name: 'Celia Weston', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/145/363811.jpg', dead: 'false'},
+        {name: 'Haley Joel Osment', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/9/24282.jpg', dead: 'false'},
+        {name: 'Emilia Clarke', info: 'English Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/54/136753.jpg', dead: 'false'},
+        {name: 'Diahann Carol', info: 'American Actress/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/83/209257.jpg', dead: 'true'},
+        {name: 'Linda Porter', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/76/190492.jpg', dead: 'true'},
+        {name: 'Sid Haig', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/178/446603.jpg', dead: 'true'},
+        {name: 'Aron Eisenberg', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/164/411233.jpg', dead: 'true'},
+        {name: 'Suzanne Wang', info: 'American TV Host', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/79/198447.jpg', dead: 'true'},
+        {name: 'Cokie Roberts', info: 'American Journalist', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/45/113586.jpg', dead: 'true'},
+        {name: 'Paul McCrane', info: 'American Actor/Director/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/1/3738.jpg', dead: 'false'},
+        {name: 'Eddie Vedder', info: 'American Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/72/181988.jpg', dead: 'false'},
+        {name: 'Steven Page', info: 'Canadian Musician/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/150/375450.jpg', dead: 'false'},
+        {name: 'Ed Robertson', info: 'Canadian Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/87/217996.jpg', dead: 'false'},
+        {name: `Dolores O'Riordan`, info: 'Irish Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/142/356364.jpg', dead: 'true'},
+        {name: 'Martin Short', info: 'Canadian Actor/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/3/8357.jpg', dead: 'false'},
+        {name: 'Carrie Fisher', info: 'American Actress/Author/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/5/13073.jpg', dead: 'true'},
+        {name: 'John Belushi', info: 'American Actor/Comedian/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/79/198157.jpg', dead: 'true'},
+        {name: 'Dan Aykroyd', info: 'Canadian Actor/Comedian/Musician', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/45/113631.jpg', dead: 'false'},
+        {name: 'Ric Ocasek', info: 'American Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/211/528565.jpg', dead: 'true'},
+        {name: 'Eddie Money', info: 'American Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/129/323384.jpg', dead: 'true'},
+        {name: 'Valerie Harper', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/120/301583.jpg', dead: 'true'},
+        {name: 'Bill Murray', info: 'American Actor/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/2/7210.jpg', dead: 'false'},
+        {name: 'Ernie Hudson', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/1031.jpg', dead: 'false'},
+        {name: 'Stephen King', info: 'American Author', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/1813.jpg', dead: 'false'},
+        {name: 'Shania Twain', info: 'Canadian Singer/Songwriter', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/25/64976.jpg', dead: 'false'},
+        {name: 'Peter Fonda', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/55/139348.jpg', dead: 'true'},
+        {name: 'Russi Taylor', info: 'American Voice Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/9/24958.jpg', dead: 'true'},
+        {name: 'Rutger Hauer', info: 'Dutch Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/127/318343.jpg', dead: 'true'},
+        {name: 'Rip Torn', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/204/511910.jpg', dead: 'true'},
+        {name: 'Cameron Boyce', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/71/178287.jpg', dead: 'true'},
+        {name: 'Eddie Jones', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/37/93748.jpg', dead: 'true'},
+        {name: 'Beth Chapman', info: 'American Reality Star', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/203/508135.jpg', dead: 'true'},
+        {name: 'Max Wright', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/121/303340.jpg', dead: 'true'},
+        {name: 'Tim Conway', info: 'American Actor/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/7/18294.jpg', dead: 'true'},
+        {name: 'Doris Day', info: 'American Actress/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/51/128037.jpg', dead: 'true'},
+        {name: 'Peggy Lipton', info: 'American Actress', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/3/9257.jpg', dead: 'true'},
+        {name: 'Peter Mayhew', info: 'English Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/194/485998.jpg', dead: 'true'},
+        {name: 'John Singleton', info: 'American Director', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/194/485106.jpg', dead: 'true'}
 
       ]);
     });
 };
 
 //for my reference
-//    {name: '', info: '', imageurl: '', dead: ''}
+//    {name: '', info: '', imageurl: '', dead: ''},
