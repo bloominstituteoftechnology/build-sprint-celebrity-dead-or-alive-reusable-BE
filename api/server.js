@@ -12,7 +12,11 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-server.use('/api/', authRouter);
-server.use('/api/protected', celebRouter, auth);
+server.use('/api', authRouter);
+server.use('/api/protected', auth, celebRouter );
+
+server.get('/api', (req, res) => {
+    res.json({ api: 'Up AND running!'});
+});
 
 module.exports = server;
