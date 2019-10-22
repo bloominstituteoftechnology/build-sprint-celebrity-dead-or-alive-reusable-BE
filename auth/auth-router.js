@@ -4,7 +4,7 @@ const generateToken = require('../config/generate-token.js');
 const Users = require('./auth-model.js');
 const Celebs = require('../protected/celeb-model')
 
-//register & login
+//register
 router.post('/register', (req, res) => {
     const user = req.body;
     const hash = bcrypt.hashSync(user.password, 14);
@@ -19,6 +19,7 @@ router.post('/register', (req, res) => {
       });
 });
 
+//login
 router.post('/login', (req, res) => {
     const {username, password } = req.body;
 
