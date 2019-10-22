@@ -7,7 +7,8 @@ module.exports = {
     findBy,
     add,
     update,
-    remove
+    remove,
+    nuke
 };
 
 function find() {
@@ -41,4 +42,9 @@ function remove(id) {
     return db('celebs')
       .where('id', Number(id))
       .del();
+}
+
+async function nuke() {
+  await db('celebs')
+    .del();
 }

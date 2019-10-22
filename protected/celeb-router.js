@@ -116,6 +116,16 @@ router.delete('/celebs/:id', (req, res) => {
       });
 });
 
+router.delete('/celebs', (req, res) => {
+    Celebs.nuke()
+      .then(deleted => {
+          res.json({message: 'deleted celebrity db'})
+      })
+      .catch(err => {
+          res.status(500).json({ message: 'could not delete celebrity db'});
+      });
+});
+
 
 
 
