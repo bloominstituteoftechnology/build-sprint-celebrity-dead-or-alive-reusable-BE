@@ -13,7 +13,7 @@ module.exports = {
 
 function find() {
     return db('celebs')
-      .select('id', 'name', 'info', 'dead');
+      .select('id', 'name', 'imageurl', 'info', 'dead');
 };
 
 function findById(id) {
