@@ -20,16 +20,5 @@ describe('server', () => {
           .toBe(404);
     });
 
-    it('GET /api/celebs comes back as 200 OK', async () => {
-        const res = await request(server).get('/api/celebs')
-        expect(res.status)
-          .toBe(200);
-    });
-
-    it('GET /api/protected/users returns auth error 400 without token', async () => {
-        const res = await request(server).get('/api/protected/users')
-        expect(res.status)
-          .toBe(400);
-    })
-})
+});
     
