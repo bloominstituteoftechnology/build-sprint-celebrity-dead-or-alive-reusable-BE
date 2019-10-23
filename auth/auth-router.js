@@ -30,8 +30,9 @@ router.post('/login', (req, res) => {
               const token = generateToken(user);
 
               res.status(200).json({
-                  message: `Welcome, ${user.username}! Your user id is ${user.id}`,
-                  token
+                  message: `Welcome, ${user.username}!`,
+                  token: token,
+                  id: user.id
               });
           } else {
               res.status(401).json({ error: 'invalid user/pass'});
