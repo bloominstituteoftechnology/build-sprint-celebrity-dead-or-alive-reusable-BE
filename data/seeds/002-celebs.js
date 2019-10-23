@@ -41,7 +41,7 @@ exports.seed = function(knex) {
         {name: 'Ralph Macchio', info: 'American Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/31/79799.jpg', dead: dead2.toString()},
         {name: 'Angela Lansbury', info: 'English Actress/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/19/49161.jpg', dead: dead2.toString()},
         {name: 'Marilyn Monroe', info: 'American Actress/Singer', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/26/65653.jpg', dead: dead1.toString()},
-        {name: 'Lil Peep', info: '', imageurl: '', dead: ''},
+        {name: 'Benedict Cumberbatch', info: 'English Actor', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/108/270283.jpg', dead: 'false'},
         {name: 'Ricky Harris', info: 'American Actor/Comedian', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/90/227303.jpg', dead: dead1.toString()},
         {name: 'Alexis Arquette', info: 'American Actress/Cabaret Performer/Cartoonist', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/32/80815.jpg', dead: dead1.toString()},
         {name: 'Chyna', info: 'American Wrestler', imageurl: 'https://static.tvmaze.com/uploads/images/medium_portrait/37/93256.jpg', dead: dead1.toString()},
