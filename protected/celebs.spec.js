@@ -1,28 +1,82 @@
 const request = require('supertest');
 const server = require('../api/server.js');
-const jwt = require('jsonwebtoken');
 const app = request(server);
 
-let id;
+
 let token;
 
-let user = {
-    username: 'reverseflash',
-    password: 'downwithbarry'
-};
 
-beforeAll(async () => {
-    token = jwt.sign({sub: 1, name: user.username}, process.env.SECRET, {
-        expiresIn: '8h'
+
+describe('GET /api/protected/users', () => {
+
+    beforeEach((done) => {
+        app
+          .post('/api/login')
+          .send({
+              username: 'reverseflash',
+              password: 'downwithbarry'
+          })
+          .end((err, res) => {
+              token = res.body.token;
+              done();
+              
+          });
     });
-});
+    it('should give 200 OK with token', () => {
+        
+        return app
+          .get('/api/protected/users')
+          .set('Authorization', `${token}`)
+          .then(res => {
+            expect(res.status)
+              .toBe(200);
+            expect(res.type)
+              .toBe('application/json');
+          })
+    })
+    it('should give 401 without proper token', () => {
 
-describe('celebs', () => {
-    
-
-    it('GET /api/protected/users returns auth error 400 without token', async () => {
-        const res = await request(server).get('/api/protected/users')
-        expect(res.status)
-          .toBe(400);
+        return app
+          .get('/api/protected/users')
+          .set('Authorization', 'notavalidtoken')
+          .then(res => {
+              expect(res.status)
+                .toBe(401);
+              
+          })
     })
 })
+
+describe('celebs', () => {
+    beforeEach((done) => {
+        app
+          .post('/api/login')
+          .send({
+              username: 'reverseflash',
+              password: 'downwithbarry'
+          })
+          .end((err, res) => {
+              token = res.body.token;
+              done();
+              
+          });
+    });
+
+    it('should let you add a new celeb', () => {
+        return app
+          .post('/api/protected/celebs')
+          .set('Authorization', `${token}`)
+          .send({
+              name: 'testceleb',
+              info: 'testinfo',
+              imageurl: 'testimageurl',
+              dead: 'false'
+          })
+          .then(res => {
+              expect(res.status)
+                .toBe(201)
+          });
+    });
+
+})
+

@@ -3,10 +3,7 @@ const server = require('../api/server.js');
 const jwt = require('jsonwebtoken');
 const app = request(server)
 
-
-
-
-describe('auth', () => {
+describe('no auth needed', () => {
 
     it('GET /api/celebs comes back as 200 OK', async () => {
         const res = await request(server).get('/api/celebs')
@@ -33,7 +30,7 @@ describe('auth', () => {
           .then(res => {
               id = res.body.id;
               expect(res.body.username)
-                .toEqual('reverseflash');
+                .toEqual('test2');
               done();
           });
     });
